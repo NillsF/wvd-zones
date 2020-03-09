@@ -454,6 +454,9 @@
             "apiVersion": "2018-10-01",
             "type": "Microsoft.Compute/virtualMachines",
             "name": "[concat(if(variables('rdshManagedDisks'), '', 'null'), variables('rdshPrefix'), copyindex())]",
+            "zones": [
+                "[add(1,mod(copyindex(),3))]"
+            ],
             "location": "[parameters('location')]",
             "copy": {
                 "name": "rdsh-vm-loop",
