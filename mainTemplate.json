@@ -473,7 +473,6 @@
                 "hardwareProfile": {
                     "vmSize": "[parameters('rdshVmSize')]"
                 },
-                "availabilitySet": "[if(not(parameters('enablePersistentDesktop')), main.getAvailabilitySet(variables('rdshPrefix')), json('null'))]",
                 "osProfile": {
                     "computerName": "[concat(variables('rdshPrefix'), copyindex())]",
                     "adminUsername": "[variables('existingDomainUsername')]",
